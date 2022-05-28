@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "268062281642",
+    "project_id": "memo-ff06e",
+    "storage_bucket": "memo-ff06e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268062281642:android:63ba0ae14cccbf832425d3",
+        "android_client_info": {
+          "package_name": "com.calendar.page.example.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268062281642-8jgf3heu10k9m6kpokbhln7pa6h4qnpt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCMVczAAtSsLi0yyqxrKBlWdHzVkOfyxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268062281642-8jgf3heu10k9m6kpokbhln7pa6h4qnpt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

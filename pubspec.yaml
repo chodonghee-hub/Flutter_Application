@@ -1,0 +1,23 @@
+name: calendar_view
+description: A Flutter package allows you to easily implement all calendar UI and calendar event functionality.
+version: 0.0.4
+homepage: https://github.com/SimformSolutionsPvtLtd/flutter_calendar_view
+issue_tracker: https://github.com/SimformSolutionsPvtLtd/flutter_calendar_view/issues
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  timelines: ^0.1.0
+  table_calendar: ^3.0.5
+  syncfusion_flutter_datepicker: ^20.1.56
+  sqflite: ^2.0.2+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
