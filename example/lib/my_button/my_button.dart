@@ -11,15 +11,10 @@ class MyButton extends StatelessWidget {
   // }
   MyButton({this.image, this.text, this.color, this.radius, this.onPressed});
 
-  // Widget? image = null;
   var image;
-  // Widget? text = null;
   var text;
-  // Color? color = null;
   var color;
-  // double? radius = null;
   var radius;
-  // VoidCallback? onPressed = null;
   var onPressed;
 
   @override

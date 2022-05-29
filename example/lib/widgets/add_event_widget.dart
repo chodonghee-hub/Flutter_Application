@@ -25,9 +25,9 @@ class _AddEventWidgetState extends State<AddEventWidget> {
   late DateTime _startDate;
   late DateTime _endDate;
 
-  DateTime? _startTime;
+  late DateTime _startTime;
 
-  DateTime? _endTime;
+  late DateTime _endTime;
 
   String _title = "";
 

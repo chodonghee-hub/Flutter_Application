@@ -40,6 +40,7 @@ dependencies:
   sqflite: ^2.0.2+1
   crypto: ^3.0.2
   provider: ^6.0.3
+  google_sign_in: ^5.3.2
 
 dev_dependencies:
   flutter_test:
@@ -90,5 +91,16 @@ flutter:
           weight: 700
         - asset: assets/fonts/Noto_Serif_KR/NotoSerifKR-Black.otf
           weight: 900
+
+    - family: NotoSansCJKkr
+      fonts:
+        - asset: assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf
+        - asset: assets/fonts/Noto_Sans_KR/NotoSansKR-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Noto_Sans_KR/NotoSansKR-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Noto_Sans_KR/NotoSansKR-Black.otf
+          weight: 900
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,33 +1,35 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../my_button/my_button.dart';
+import './google_login.dart';
+import './home.dart';
 
-class LogInRefac extends StatelessWidget {
+class LogInRefac extends StatefulWidget {
+  @override
+  State<LogInRefac> createState() => _LogInRefacState();
+}
+
+class _LogInRefacState extends State<LogInRefac> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(102, 102, 153, 1),
-      appBar: AppBar(
-        title: Text("T4 Calendar",
-          style: TextStyle(
-            fontFamily: 'Noto_Serif_KR',
-            fontSize: 25.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),),
-        centerTitle: true,
-        elevation: 0,
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: Color.fromRGBO(102, 102, 153, 1),
+        appBar: AppBar(
+          title: Text("T4 Calendar",
+            style: TextStyle(
+              fontFamily: 'Noto_Serif_KR',
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),),
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Color.fromRGBO(102, 102, 153, 1),
+        ),
+
+        body: _buildButton(),
       ),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.blue,
-      //   title: Text(
-      //     'Sign In',
-      //     style: TextStyle(color: Colors.white),
-      //   ),
-      //   centerTitle: true,
-      //   elevation: 0.2,
-      // ),
-      body: _buildButton(),
     );
   }
 
@@ -46,22 +48,12 @@ class LogInRefac extends StatelessWidget {
             ),
             color: Colors.white,
             radius: 4.0,
-            onPressed: (){},
-          ),
-
-          SizedBox(
-            height: 10.0,
-          ),
-
-          MyButton(
-            image: Image.asset('image/flogo.png'),
-            text: Text(
-              'Login with Facebook',
-              style: TextStyle(color: Colors.white, fontSize: 15.0),
-            ),
-            color: Color(0xFF334D92),
-            radius: 4.0,
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GoogleLogin()),
+              );
+            },
           ),
 
           SizedBox(
@@ -79,7 +71,12 @@ class LogInRefac extends StatelessWidget {
             ),
             color: Colors.green,
             radius: 4.0,
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
+              );
+            },
           ),
         ],
       ),

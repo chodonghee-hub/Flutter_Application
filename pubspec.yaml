@@ -15,6 +15,7 @@ dependencies:
   table_calendar: ^3.0.5
   syncfusion_flutter_datepicker: ^20.1.56
   sqflite: ^2.0.2+1
+  flutterfire_ui: ^0.4.1+2
 
 dev_dependencies:
   flutter_test:

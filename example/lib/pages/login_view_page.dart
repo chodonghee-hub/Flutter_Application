@@ -21,7 +21,7 @@ class _LogInState extends State<LogIn> {
       appBar: AppBar(
         title: Text("T4 Calendar",
           style: TextStyle(
-            fontFamily: 'Noto_Serif_KR',
+            fontFamily: 'Noto_Sans_KR',
             fontSize: 25.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,

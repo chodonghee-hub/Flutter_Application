@@ -2,6 +2,7 @@ import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../extension.dart';
 import '../model/event.dart';
@@ -13,6 +14,7 @@ import '../action_button.dart';
 import '../expandable_fab.dart';
 import 'remove_event_page.dart';
 import 'memo_event_page.dart';
+import '../../login_app/login_refactor.dart';
 
 class MonthViewPageDemo extends StatefulWidget {
   const MonthViewPageDemo({
@@ -33,7 +35,7 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
           centerTitle: true,
           title: Text('T4 Calendar Demo',
             style: TextStyle(
-              fontFamily: 'Noto_Serif_KR',
+              fontFamily: 'Noto_Sans_KR',
               fontSize: 20.0,
               color: Color.fromARGB(255, 255, 255, 255),
             ),),
@@ -47,6 +49,23 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
                 )
             ),
           ),
+          // #################### 로그아웃 아이콘 버튼 ###################
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.exit_to_app_sharp,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                //FirebaseAuth.instance.currentUser?.displayName; .. 현재 유저
+                FirebaseAuth.instance.signOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LogInRefac()),
+                );
+              },
+            )
+          ],
           bottom: TabBar(
               labelColor: Colors.white,
               unselectedLabelColor: Colors.white24,
