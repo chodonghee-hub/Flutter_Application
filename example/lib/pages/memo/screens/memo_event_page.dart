@@ -5,10 +5,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import './memo/screens/edit.dart';
-import './memo/screens/view.dart';
-import './memo/database/db.dart';
-import './memo/database/memo.dart';
+import './../screens/edit.dart';
+import './../screens/view.dart';
+import './../database/db.dart';
+import './../database/memo.dart';
+
+//적은 메모 보여주는 페이지
 
 String deleteId = ''; //전역 변수 설정 -> 삭제할 때 memo.id를 못 불러온다.
 
@@ -18,26 +20,11 @@ class MemoEvent extends StatefulWidget {
 }
 
 class _MemoEventState extends State<MemoEvent> {
-
   @override
   Widget build(BuildContext context) {
     final controller = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(
-        title: TextField(controller: controller,),
-        actions: <Widget>[
-          /*
-          IconButton(
-            onPressed: () {
-              final name = controller.text;
-              createUser(name: name);
-            },
-            icon: const Icon(Icons.refresh),
-          ),
-           */
-        ],
-      ),
       body: InkWell(
         onDoubleTap: () {
           setState(() {});
@@ -47,13 +34,13 @@ class _MemoEventState extends State<MemoEvent> {
             Padding(
                 padding: EdgeInsets.only(left: 5, top: 10, bottom: 20),
                 child: Container(
-                  /*
+                    /*
                   child: Text('메모',
                       style: TextStyle(fontSize: 36, color: Colors.blue)),
                   alignment: Alignment.centerLeft,
                    */
-                )),
-            Expanded(child: memoBuilder(context))
+                    )),
+            Expanded(child: memoBuilder(context)),
           ],
         ),
       ),
@@ -65,26 +52,18 @@ class _MemoEventState extends State<MemoEvent> {
         tooltip: '메모 추가를 위해 클릭하시오.',
         label: Text('메모 추가'),
         icon: Icon(Icons.add),
+        backgroundColor: Color.fromRGBO(110, 110, 140, 1),
       ),
     );
   }
 
-  /*
   //파이어베이스 유저 이름
-  Future createUser ({required String name}) async{
-    final docUser = FirebaseFirestore.instance.collection('user1').doc('my-id');
-
-    final json = {
-      'title' : memo.title,
-      'age' : 21,
-      'birthday' : DateTime(2022, 5, 28),
-    };
-    await docUser.set(json);
+  Future createUser({required String name}) async {
+    //일단 스킵 -> 클릭하면 갱신되는 걸로
   }
-   */
 
   //메모 불러오기
-  Future <List<Memo>> loadMemo() async {
+  Future<List<Memo>> loadMemo() async {
     DBHelper sd = DBHelper();
     return await sd.memos();
   }
@@ -102,7 +81,10 @@ class _MemoEventState extends State<MemoEvent> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('삭제 경고'),
-          content: Text("정말 삭제하시겠습니까?\n삭제된 메모는 복구되지 않습니다."),
+          content: Text(
+              "정말 삭제하시겠습니까?\n삭제된 메모는 복구되지 않습니다."
+              "\n\n이미 업로드한 일기를 삭제하려면\n'업로드한 일기'의 삭제 버튼을 누르시오."
+          ),
           actions: <Widget>[
             TextButton(
               child: Text('삭제'),
@@ -136,37 +118,58 @@ class _MemoEventState extends State<MemoEvent> {
           itemBuilder: (context, index) {
             Memo memo = (Snap.data as List)[index];
 
-
             //메모 연동
-            Future createUser ({required String name}) async{
-              final docUser = FirebaseFirestore.instance.collection('user1').doc('my-id');
+            Future createUser({required String name}) async {
+              final docUser =
+              FirebaseFirestore.instance.collection('user1').doc(memo.id);
 
               final json = {
-                'title' : memo.title,
-                'text' : memo.text,
-                'createTime' : memo.createTime,
-                'editTime' : memo.editTime,
+                'id': memo.id,
+                'title': memo.title,
+                'text': memo.text,
+                'createTime': memo.createTime,
+                'editTime': memo.editTime,
               };
 
               await docUser.set(json);
             }
 
+            //갱신 알림
+            Future showAlertRefresh(BuildContext context) async {
+              String result = await showDialog(
+                context: context,
+                barrierDismissible: false, // user must tap button!
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('일기 갱신'),
+                    content: Text("일기를 업로드 하시겠습니까?"),
+                    actions: <Widget>[
+                      TextButton(
+                        child: Text('갱신'),
+                        onPressed: () {
+                          Navigator.pop(context, "갱신");
+                          setState(() {
+                            createUser(name: 'user1');
+                          });
+                        },
+                      ),
+                      TextButton(
+                        child: Text('취소'),
+                        onPressed: () {
+                          deleteId = '';
+                          Navigator.pop(context, "취소");
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
 
             return InkWell(
-
-              onDoubleTap: (){
-                createUser(name: 'user1');
+              onDoubleTap: () {
+                showAlertRefresh(parentContext);
               },
-
-              /*
-              onTap: () {
-                Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                        builder: (context) => ViewPage(id: memo.id)));
-                //id 넘겨주기 statless widget pass data 검색
-              },
-               */
               onLongPress: () {
                 setState(() {
                   deleteId = memo.id;
@@ -181,7 +184,7 @@ class _MemoEventState extends State<MemoEvent> {
                 decoration: BoxDecoration(
                   image: const DecorationImage(
                     image: NetworkImage(
-                        'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1qpG7o-AZtARdfRmiYS29FR-NFWrGtKOcNQ&usqp=CAU'),
                     fit: BoxFit.cover,
                   ),
                   color: Colors.white,
@@ -236,7 +239,6 @@ class _MemoEventState extends State<MemoEvent> {
                             textAlign: TextAlign.right,
                           ),
                         ]),
-                    // Widge t to display the list of project
                   ],
                 ),
               ),

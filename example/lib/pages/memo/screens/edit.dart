@@ -4,6 +4,7 @@ import 'package:crypto/crypto.dart';
 
 import '../database/db.dart';
 import '../database/memo.dart';
+import './camera.dart';
 
 class EditPage extends StatelessWidget {
 
@@ -15,13 +16,22 @@ class EditPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(110, 110, 140, 1),
         actions: <Widget>[
+          /*
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.delete),
+            icon: const Icon(Icons.refresh),
+          ),
+           */
+          IconButton(
+            icon: const Icon(Icons.photo),
+            color: Colors.white,
+            onPressed: () => GetImage(),
           ),
           IconButton(
             icon: const Icon(Icons.save),
+            color: Colors.white,
             onPressed: saveDB,
           ),
         ],

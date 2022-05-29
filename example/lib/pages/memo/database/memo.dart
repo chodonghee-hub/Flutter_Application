@@ -24,4 +24,5 @@ class Memo {
   String toString() {
     return 'Memo{id: $id, title:$title, text: $text, createTime: $createTime, editTime: $editTime}';
   }
+
 }

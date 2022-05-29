@@ -12,8 +12,8 @@ import '../widgets/week_view_widget.dart';
 import 'create_event_page.dart';
 import '../action_button.dart';
 import '../expandable_fab.dart';
+import 'memo_main_page.dart';
 import 'remove_event_page.dart';
-import 'memo_event_page.dart';
 import '../../login_app/login_refactor.dart';
 
 class MonthViewPageDemo extends StatefulWidget {
@@ -106,7 +106,7 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
               onPressed: (){
                 Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => MemoEvent())
+                    CupertinoPageRoute(builder: (context) => MemoMain())
                 );
               },
               icon: Icon(Icons.note),

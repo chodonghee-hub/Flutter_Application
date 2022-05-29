@@ -25,8 +25,6 @@ class DBHelper {
   Future<void> insertMemo(Memo memo) async {
     final db = await database;
 
-    // 메모가 추가 되는 부분
-    // Memo
     await db.insert(
       TableName,
       memo.toMap(),
