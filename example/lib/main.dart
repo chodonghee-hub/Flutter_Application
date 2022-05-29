@@ -7,6 +7,7 @@ import 'pages/mobile/mobile_home_page.dart';
 import 'pages/web/web_home_page.dart';
 import 'widgets/responsive_widget.dart';
 import './pages/login_view_page.dart';
+import 'login_app/login_refactor.dart';
 
 DateTime get _now => DateTime.now();
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(),
         home: ResponsiveWidget(
-          mobileWidget: LogIn(),
+          mobileWidget: LogInRefac(),
           webWidget: WebHomePage(),
         ),
       ),
