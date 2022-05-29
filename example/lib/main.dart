@@ -6,6 +6,7 @@ import 'model/event.dart';
 import 'pages/mobile/mobile_home_page.dart';
 import 'pages/web/web_home_page.dart';
 import 'widgets/responsive_widget.dart';
+import 'pages/';
 
 DateTime get _now => DateTime.now();
 
