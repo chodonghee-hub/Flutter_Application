@@ -156,26 +156,6 @@ class MobileHomePage extends StatelessWidget {
                   letterSpacing: 5,
                 ),),
             ),
-            SizedBox(height: 100),
-            OutlinedButton(
-              onPressed: () => context.pushRoute(MonthViewPageDemo()),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Color.fromRGBO(255, 255, 255, 0.1)),
-                  minimumSize: MaterialStateProperty.all(Size(150, 60)) ,
-                  side: MaterialStateProperty.all(BorderSide(
-                      color: Color.fromRGBO(255, 255, 255, 0.5),
-                      width: 1.0,
-                      style: BorderStyle.solid))
-              ),
-
-              child: Text("T4 Calendar",
-                style: TextStyle(
-                  fontFamily: 'Noto_Serif_KR',
-                  fontSize: 20.0,
-                  color: Color.fromARGB(255, 255, 255, 255),
-                ),
-              ),
-            ),
           ],
         ),
       ),

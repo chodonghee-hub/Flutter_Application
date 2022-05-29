@@ -6,7 +6,7 @@ import 'model/event.dart';
 import 'pages/mobile/mobile_home_page.dart';
 import 'pages/web/web_home_page.dart';
 import 'widgets/responsive_widget.dart';
-import 'pages/';
+import './pages/login_view_page.dart';
 
 DateTime get _now => DateTime.now();
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(),
         home: ResponsiveWidget(
-          mobileWidget: MobileHomePage(),
+          mobileWidget: LogIn(),
           webWidget: WebHomePage(),
         ),
       ),
