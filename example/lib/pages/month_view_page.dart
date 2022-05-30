@@ -26,6 +26,11 @@ class MonthViewPageDemo extends StatefulWidget {
 }
 
 class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
+
+  // ################## 로그인 유저 ####################
+  late FirebaseAuth logined_user = FirebaseAuth.instance;
+  late String user_name = logined_user.currentUser!.uid;
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
