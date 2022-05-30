@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
-import '../pages/mobile/mobile_home_page.dart';
+import '../pages/month_view_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,8 +18,15 @@ class Home extends StatelessWidget {
 class Authentication extends StatelessWidget {
   const Authentication({Key? key}) : super(key: key);
 
+  Future<void> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+    } catch (e) {}
+  }
+
   @override
   Widget build(BuildContext context) {
+    signOut();
     return StreamBuilder(
       // 로그인 로그아웃을 감시 하는 부분
       stream: FirebaseAuth.instance.authStateChanges(),
@@ -31,7 +38,7 @@ class Authentication extends StatelessWidget {
             ],
           );
         }
-        return MobileHomePage();
+        return MonthViewPageDemo();
       },
     );
   }

@@ -49,23 +49,12 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
                 )
             ),
           ),
+
           // #################### 로그아웃 아이콘 버튼 ###################
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.exit_to_app_sharp,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                //FirebaseAuth.instance.currentUser?.displayName; .. 현재 유저
-                FirebaseAuth.instance.signOut();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LogInRefac()),
-                );
-              },
-            )
-          ],
+          // ... 오후 11:17 2022-05-30 로그아웃 버튼 삭제
+          // ... 뒤로 가기 버튼을 눌렀을 때 원활하게 로그아웃이 진행 되도록
+          // ... 로그인 페이지 접속 시, 로그아웃을 실행 되도록 변경
+
           bottom: TabBar(
               labelColor: Colors.white,
               unselectedLabelColor: Colors.white24,
