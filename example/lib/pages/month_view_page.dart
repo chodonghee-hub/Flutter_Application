@@ -1,4 +1,5 @@
 import 'package:calendar_view/calendar_view.dart';
+import 'package:example/weather_screen/weather_loading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -76,10 +77,11 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
                 Tab(icon: Icon(Icons.cloud), text: 'Weather',),
               ]),),
         //###################### TapBar 이동 부분 #######################
+        // ... 오후 1:30 2022-06-01 WeatherScreen 기능 추가
         body: TabBarView(children: [
           Center(child: MonthViewWidget()),
           Center(child: DayViewWidget()),
-          Center(child: WeekViewWidget()),
+          Center(child: WeatherLoading()),
         ],),
         //##############################################################
         floatingActionButton:

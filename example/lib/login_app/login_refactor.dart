@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../kakao/kakao_login.dart';
+import '../kakao/kakao_main_view_model.dart';
+import '../kakao/kako_login_page.dart';
 import '../my_button/my_button.dart';
 import './google_login.dart';
 import './home.dart';
@@ -10,15 +13,24 @@ class LogInRefac extends StatefulWidget {
 }
 
 class _LogInRefacState extends State<LogInRefac> {
+  final viewModel = KakaoMainViewModel(KakaoLogin());
+
+  Future<void> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+    } catch (e) {}
+  }
+
   @override
   Widget build(BuildContext context) {
+    signOut();
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color.fromRGBO(102, 102, 153, 1),
         appBar: AppBar(
           title: Text("T4 Calendar",
             style: TextStyle(
-              fontFamily: 'Noto_Serif_KR',
+              fontFamily: 'Noto_Sans_KR',
               fontSize: 25.0,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -28,7 +40,7 @@ class _LogInRefacState extends State<LogInRefac> {
           backgroundColor: Color.fromRGBO(102, 102, 153, 1),
         ),
 
-        body: _buildButton(),
+        body:_buildButton(),
       ),
     );
   }
@@ -53,6 +65,24 @@ class _LogInRefacState extends State<LogInRefac> {
                 context,
                 MaterialPageRoute(builder: (context) => GoogleLogin()),
               );
+            },
+          ),
+
+          SizedBox(
+            height: 10.0,
+          ),
+
+          MyButton(
+            image: Image.asset('image/klogo.png'),
+            text: Text(
+              'Login with KakaoTalk',
+              style: TextStyle(color: Colors.brown, fontSize: 15.0),
+            ),
+            color: Colors.amberAccent,
+            radius: 4.0,
+            onPressed: () async {
+              await viewModel.login();
+              setState((){});
             },
           ),
 
