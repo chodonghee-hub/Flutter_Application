@@ -34,7 +34,7 @@ class CalendarConfig extends StatelessWidget {
           ),
         ),
         Divider(
-          color: AppColors.lightNavyBlue,
+          color: AppColors.orangeAccent,
         ),
         Expanded(
           child: SingleChildScrollView(
@@ -69,8 +69,8 @@ class CalendarConfig extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(7),
                             color: view == currentView
-                                ? AppColors.navyBlue
-                                : AppColors.bluishGrey,
+                                ? AppColors.orangeAccent
+                                : AppColors.orangeAccent,
                           ),
                           child: Text(
                             view.name.capitalized,

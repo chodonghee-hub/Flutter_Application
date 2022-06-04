@@ -11,4 +11,5 @@ class AppColors {
   static const Color lightNavyBlue = Color(0xffb3b9ed);
   static const Color red = Color(0xfff96c6c);
   static const Color grey = Color(0xffe0e0e0);
+  static const Color orangeAccent = Color.fromRGBO(238, 154, 0, 0);
 }

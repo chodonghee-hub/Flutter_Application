@@ -44,7 +44,7 @@ class _MemoUpdate extends State<MemoUpdate> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
-            child: Text('user1'[0]),
+            child: Text('memomemo'[0]),
           ),
         ],
       ),
@@ -65,7 +65,7 @@ class _MemoUpdate extends State<MemoUpdate> {
             icon: Icon(
               Icons.delete,
               size: 20.0,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () {
               deleteId = user.id;
@@ -82,7 +82,7 @@ class _MemoUpdate extends State<MemoUpdate> {
       ));
 
   Stream<List<User>> readUsers() => FirebaseFirestore.instance
-      .collection('user1')
+      .collection('memomemo')
       .snapshots()
       .map((snapshot) =>
           snapshot.docs.map((doc) => User.fromJson(doc.data())).toList());

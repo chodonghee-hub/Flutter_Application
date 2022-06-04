@@ -44,6 +44,7 @@ class DBHelper {
         text: maps[i]['text'],
         createTime: maps[i]['createTime'],
         editTime: maps[i]['editTime'],
+        //image: maps[i]['image'],
       );
     });
   }
@@ -61,6 +62,7 @@ class DBHelper {
         text: maps[i]['text'],
         createTime: maps[i]['createTime'],
         editTime: maps[i]['editTime'],
+        //image: maps[i]['image'],
       );
     });
   }

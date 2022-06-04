@@ -27,22 +27,22 @@ class AppConstants {
         focusedErrorBorder: inputBorder,
         hintText: "일정 제목",
         hintStyle: TextStyle(
-          fontFamily: 'Noto_Serif_KR',
+          fontFamily: 'Gamja_Flower',
           color: AppColors.black,
           fontSize: 17,
         ),
         labelStyle: TextStyle(
-          fontFamily: 'Noto_Serif_KR',
+          fontFamily: 'Gamja_Flower',
           color: AppColors.black,
           fontSize: 17,
         ),
         helperStyle: TextStyle(
-          fontFamily: 'Noto_Serif_KR',
+          fontFamily: 'Gamja_Flower',
           color: AppColors.black,
           fontSize: 17,
         ),
         errorStyle: TextStyle(
-          fontFamily: 'Noto_Serif_KR',
+          fontFamily: 'Gamja_Flower',
           color: AppColors.red,
           fontSize: 12,
         ),
