@@ -1,9 +1,9 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 
 import 'model/event.dart';
-import 'pages/mobile/mobile_home_page.dart';
 import 'pages/web/web_home_page.dart';
 import 'widgets/responsive_widget.dart';
 import 'login_app/login_refactor.dart';
@@ -11,6 +11,7 @@ import 'login_app/login_refactor.dart';
 DateTime get _now => DateTime.now();
 
 Future<void> main() async {
+  KakaoSdk.init(nativeAppKey: 'e9e0b9ddd22224c86f7af2f17b53e04d');
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());

@@ -1,3 +1,4 @@
+import 'package:example/kakao/kakao_status_main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../kakao/kakao_login.dart';
@@ -80,10 +81,20 @@ class _LogInRefacState extends State<LogInRefac> {
             ),
             color: Colors.amberAccent,
             radius: 4.0,
+            //############### 카카오 로그인 #################
             onPressed: () async {
               await viewModel.login();
               setState((){});
             },
+
+            //############## 카카오 로그인 테스트 ############
+            // onPressed: (
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => KakaoStatusMain()),
+            //   )
+            // ),
+            //#############################################
           ),
 
           SizedBox(
