@@ -4,31 +4,51 @@ import 'package:crypto/crypto.dart';
 
 import '../database/db.dart';
 import '../database/memo.dart';
-import './camera.dart';
 
-class EditPage extends StatelessWidget {
+import 'dart:io';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
+
+class EditPage extends StatefulWidget {
+  @override
+  State<EditPage> createState() => _EditPage();
+}
+
+class _EditPage extends State<EditPage> {
 
   String title = '';
   String text = '';
+  //List<XFile>? imageFileList;
+
+  final ImagePicker imagePicker = ImagePicker();
+
+  List<XFile>? imageFileList = [];
+
+  void selectImages() async {
+    final List<XFile>? selectedImages = await imagePicker.pickMultiImage();
+    if (selectedImages!.isNotEmpty) {
+      imageFileList!.addAll(selectedImages);
+    }
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(110, 110, 140, 1),
+        backgroundColor: Colors.orangeAccent,
         actions: <Widget>[
           /*
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.refresh),
+            icon: const Icon(Icons.camera_alt),
+            color: Colors.white,
+            onPressed: () {
+              selectImages();
+            },
           ),
            */
-          IconButton(
-            icon: const Icon(Icons.photo),
-            color: Colors.white,
-            onPressed: () => GetImage(),
-          ),
           IconButton(
             icon: const Icon(Icons.save),
             color: Colors.white,
@@ -67,6 +87,19 @@ class EditPage extends StatelessWidget {
                   labelText: '내용',
                   hintText: '내용을 입력하시오.',
                 ),),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GridView.builder(
+                      itemCount: imageFileList!.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3),
+                      itemBuilder: (BuildContext context, int index) {
+                        return Image.file(File(imageFileList![index].path),
+                            fit: BoxFit.cover);
+                      }),
+                ),
+              ),
         ],),
       ),);
 }
@@ -80,6 +113,7 @@ class EditPage extends StatelessWidget {
       text: this.text,
       createTime: DateTime.now().toString(),
       editTime: DateTime.now().toString(),
+      //image: this.imageFileList,
     );
 
     await sd.insertMemo(fido);

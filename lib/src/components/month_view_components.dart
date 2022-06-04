@@ -37,22 +37,22 @@ class CircularCell extends StatelessWidget {
     required this.date,
     this.events = const [],
     this.shouldHighlight = false,
-    this.backgroundColor = Colors.blue,
+    this.backgroundColor = Colors.orangeAccent,
     this.highlightedTitleColor = Constants.white,
-    this.titleColor = Constants.black,
+    this.titleColor = Colors.orangeAccent,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: CircleAvatar(
-        backgroundColor: shouldHighlight ? backgroundColor : Colors.transparent,
+        backgroundColor: shouldHighlight ? backgroundColor : Colors.orangeAccent,
         child: Text(
           "${date.day}",
           style: TextStyle(
-            fontFamily: 'Noto_Serif_KR',
+            fontFamily: 'Gamja_Flower',
             fontSize: 20,
-            color: shouldHighlight ? highlightedTitleColor : titleColor,
+            color: shouldHighlight ? highlightedTitleColor : Colors.orangeAccent,
           ),
         ),
       ),
@@ -103,10 +103,10 @@ class FilledCell<T> extends StatelessWidget {
     required this.events,
     this.isInMonth = false,
     this.shouldHighlight = false,
-    this.backgroundColor = Colors.blue,
-    this.highlightColor = Colors.blue,
+    this.backgroundColor = Colors.orangeAccent,
+    this.highlightColor = Colors.orangeAccent,
     this.onTileTap,
-    this.tileColor = Colors.blue,
+    this.tileColor = Colors.orangeAccent,
     this.highlightRadius = 11,
     this.titleColor = Constants.black,
     this.highlightedTitleColor = Constants.white,
@@ -134,7 +134,7 @@ class FilledCell<T> extends StatelessWidget {
                         ? titleColor
                         : titleColor.withOpacity(0.4),
                 fontSize: 12,
-                fontFamily: 'Noto_Serif_KR',
+                fontFamily: 'Gamja_Flower',
               ),
             ),
           ),
@@ -253,7 +253,7 @@ class WeekDayTile extends StatelessWidget {
         Constants.weekTitles[dayIndex],
         style: textStyle ??
             TextStyle(
-              fontFamily: 'Noto_Serif_KR',
+              fontFamily: 'Gamja_Flower',
               fontSize: 15.0,
               color: Colors.black,
             ),

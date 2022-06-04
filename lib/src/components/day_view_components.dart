@@ -74,7 +74,7 @@ class RoundedEventTile extends StatelessWidget {
                 title,
                 style: titleStyle ??
                     TextStyle(
-                      fontFamily: 'Noto_Serif_KR',
+                      fontFamily: 'Gamja_Flower',
                       fontSize: 20.0,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -91,7 +91,7 @@ class RoundedEventTile extends StatelessWidget {
                   description,
                   style: descriptionStyle ??
                       TextStyle(
-                        fontFamily: 'Noto_Serif_KR',
+                        fontFamily: 'Gamja_Flower',
                         fontSize: 15.0,
                         color: Colors.white,
                       ),
@@ -129,7 +129,7 @@ class DayPageHeader extends CalendarPageHeader {
   }) : super(
           key: key,
           date: date,
-          backgroundColor: const Color.fromRGBO(64, 50, 139, 1.0),
+          backgroundColor: const Color.fromRGBO(238, 154, 0, 0),
           iconColor: Colors.white,
           onNextDay: onNextDay,
           onPreviousDay: onPreviousDay,
@@ -166,7 +166,7 @@ class DefaultTimeLineMark extends StatelessWidget {
           textAlign: TextAlign.right,
           style: markingStyle ??
               TextStyle(
-                fontFamily: 'Noto_Serif_KR',
+                fontFamily: 'Gamja_Flower',
                 fontSize: 15.0,
                 color: Colors.white54,
                 fontWeight: FontWeight.bold,

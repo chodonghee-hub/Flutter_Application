@@ -195,7 +195,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Text(
                                 'AQI(대기질지수)',
                                 style: TextStyle(
-                                  fontFamily: 'Noto_Sans_KR',
+                                  fontFamily: 'Gamja_Flower',
                                   fontSize: 20.0,
                                   color: Color.fromARGB(255, 255, 255, 255),
                                 ),
@@ -215,7 +215,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Text(
                                 '미세먼지',
                                 style: TextStyle(
-                                  fontFamily: 'Noto_Sans_KR',
+                                  fontFamily: 'Gamja_Flower',
                                   fontSize: 20.0,
                                   color: Color.fromARGB(255, 255, 255, 255),
                                 ),
@@ -238,7 +238,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Text(
                                 '㎍/m3',
                                 style: TextStyle(
-                                  fontFamily: 'Noto_Sans_KR',
+                                  fontFamily: 'Gamja_Flower',
                                   fontSize: 20.0,
                                   color: Color.fromARGB(255, 255, 255, 255),
                                 ),

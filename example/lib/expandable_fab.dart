@@ -83,7 +83,7 @@ class _ExpandableFabState extends State<ExpandableFab>
       duration: _duration,
       transform: Matrix4.rotationZ(_open ? 0 : pi / 4),
       child: FloatingActionButton(
-        backgroundColor: Color.fromRGBO(110, 110, 140, 1),
+        backgroundColor: Colors.orangeAccent,
         onPressed: toggle,
         child: Icon(
           Icons.close,

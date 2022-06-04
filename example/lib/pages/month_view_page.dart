@@ -41,14 +41,14 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
           centerTitle: true,
           title: Text('T4 Calendar Demo',
             style: TextStyle(
-              fontFamily: 'Noto_Sans_KR',
+              fontFamily: 'Gamja_Flower',
               fontSize: 20.0,
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: Colors.white,
             ),),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color.fromRGBO(102, 102, 153, 1), Color.fromRGBO(110, 110, 140, 1),
+                  colors: [Colors.orangeAccent, Colors.orangeAccent,
                   ],
                   begin: Alignment.bottomLeft,
                   end: Alignment.bottomRight,
@@ -95,7 +95,7 @@ class _MonthViewPageDemoState extends State<MonthViewPageDemo> {
             ),
             ActionButton(
               onPressed: (){}, //_removeEvent,
-              icon: Icon(Icons.delete),
+              icon: Icon(Icons.sports_baseball_outlined),
               color: Colors.white,
             ),
             ActionButton(

@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
           horizontal: 40,
         ),
         decoration: BoxDecoration(
-          color: AppColors.navyBlue,
+          color: AppColors.orangeAccent,
           borderRadius: BorderRadius.circular(7.0),
           boxShadow: [
             BoxShadow(
@@ -33,7 +33,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-            fontFamily: 'Noto_Sans_KR',
+            fontFamily: 'Gamja_Flower',
             color: AppColors.white,
             fontSize: 20,
           ),

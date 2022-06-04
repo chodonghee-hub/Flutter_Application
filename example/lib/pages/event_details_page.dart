@@ -17,7 +17,7 @@ class DetailsPage extends StatelessWidget {
         title: Text(
           event.title,
           style: TextStyle(
-            fontFamily: 'Noto_Sans_KR',
+            fontFamily: 'Gamja_Flower',
             color: event.color.accentColor,
             fontSize: 20.0,
             fontWeight: FontWeight.bold,

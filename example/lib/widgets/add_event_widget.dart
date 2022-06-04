@@ -89,7 +89,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                 labelText: "일정 제목",
               ),
               style: TextStyle(
-                fontFamily: 'Noto_Serif_KR',
+                fontFamily: 'Gamja_Flower',
                 color: AppColors.black,
                 fontSize: 17.0,
               ),
@@ -121,7 +121,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                       return null;
                     },
                     textStyle: TextStyle(
-                      fontFamily: 'Noto_Serif_KR',
+                      fontFamily: 'Gamja_Flower',
                       color: AppColors.black,
                       fontSize: 15.0,
                     ),
@@ -143,7 +143,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                       return null;
                     },
                     textStyle: TextStyle(
-                      fontFamily: 'Noto_Serif_KR',
+                      fontFamily: 'Gamja_Flower',
                       color: AppColors.black,
                       fontSize: 15.0,
                     ),
@@ -172,7 +172,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                     },
                     onSave: (date) => _startTime = date,
                     textStyle: TextStyle(
-                      fontFamily: 'Noto_Serif_KR',
+                      fontFamily: 'Gamja_Flower',
                       color: AppColors.black,
                       fontSize: 15.0,
                     ),
@@ -305,7 +305,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
           side: BorderSide(
-            color: AppColors.bluishGrey,
+            color: AppColors.orangeAccent,
             width: 2,
           ),
         ),
@@ -314,7 +314,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
           Text(
             "색 설정",
             style: TextStyle(
-              fontFamily: 'Noto_Serif_KR',
+              fontFamily: 'Gamja_Flower',
               color: AppColors.black,
               fontSize: 25.0,
             ),
@@ -322,7 +322,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
           Container(
             margin: const EdgeInsets.symmetric(vertical: 20.0),
             height: 1.0,
-            color: AppColors.bluishGrey,
+            color: AppColors.orangeAccent,
           ),
           ColorPicker(
             displayThumbColor: true,

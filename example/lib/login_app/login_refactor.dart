@@ -26,18 +26,18 @@ class _LogInRefacState extends State<LogInRefac> {
     signOut();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(102, 102, 153, 1),
+        backgroundColor: Colors.lightBlueAccent,
         appBar: AppBar(
           title: Text("T4 Calendar",
             style: TextStyle(
-              fontFamily: 'Noto_Sans_KR',
+              fontFamily: 'Gamja_Flower',
               fontSize: 25.0,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),),
           centerTitle: true,
           elevation: 0,
-          backgroundColor: Color.fromRGBO(102, 102, 153, 1),
+          backgroundColor: Colors.lightBlueAccent,
         ),
 
         body:_buildButton(),

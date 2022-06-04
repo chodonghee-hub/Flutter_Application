@@ -42,7 +42,7 @@ class _CreateEventPageState extends State<CreateEventPage> {
         title: Text(
           "일정 추가",
           style: TextStyle(
-            fontFamily: 'Noto_Serif_KR',
+            fontFamily: 'Gamja_Flower',
             color: AppColors.black,
             fontSize: 20.0,
             fontWeight: FontWeight.bold,

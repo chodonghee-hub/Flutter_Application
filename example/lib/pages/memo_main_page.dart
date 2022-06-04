@@ -29,7 +29,7 @@ class _MemoMainState extends State<MemoMain> {
           title: Text(
             '일기',
             style: TextStyle(
-              fontFamily: 'Noto_Serif_KR',
+              fontFamily: 'Gamja_Flower',
               fontSize: 20.0,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -38,8 +38,8 @@ class _MemoMainState extends State<MemoMain> {
             decoration: BoxDecoration(
                 gradient: LinearGradient(
               colors: [
-                Color.fromRGBO(102, 102, 153, 1),
-                Color.fromRGBO(110, 110, 140, 1),
+                Colors.orangeAccent,
+                Colors.orangeAccent,
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.bottomRight,
